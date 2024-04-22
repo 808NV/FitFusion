@@ -1,8 +1,10 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { useState } from "react";
 
 const Navbar = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   return (
     <nav className="bg-green-400 text-white">
       <div
@@ -30,11 +32,28 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-          <button>
+          <button onClick={() => setToggleMenu(!toggleMenu)}>
             <Bars3Icon className="h-6 w-6" />
           </button>
         )}
       </div>
+      {/* mobile menu modal */}
+      {!isAboveMediumScreens && toggleMenu && (
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[200px] bg-green-800 drop-shadow-xl">
+          <div className="flex justify-end px-10 py-6">
+            <button onClick={() => setToggleMenu(!toggleMenu)}>
+              <XMarkIcon className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center gap-6 ">
+            <div>Home</div>
+            <div>Benefits</div>
+            <div>Our Classes</div>
+            <div>Contact Us</div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
