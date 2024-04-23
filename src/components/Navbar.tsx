@@ -7,15 +7,21 @@ import { SelectedPage } from "@/utils/types";
 type NavbarProps = {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
+  isTopOfPage: boolean;
 };
 
-const Navbar = ({ selectedPage, setSelectedPage }: NavbarProps) => {
+const Navbar = ({
+  selectedPage,
+  setSelectedPage,
+  isTopOfPage,
+}: NavbarProps) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
+  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
   return (
     <nav className="bg-green-400 text-white">
       <div
-        className={`flex items-center ${
+        className={`${navbarBackground} flex items-center ${
           isAboveMediumScreens ? "justify-around" : "justify-between"
         } top-0 z-30 w-full py-6 px-10`}
       >
