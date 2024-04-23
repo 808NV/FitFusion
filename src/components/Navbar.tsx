@@ -17,7 +17,7 @@ const Navbar = ({
 }: NavbarProps) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navbarBackground = isTopOfPage ? "" : "bg-green-200 drop-shadow";
   return (
     <nav className="bg-green-400 text-white">
       <div
