@@ -1,8 +1,15 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
+import Links from "./Links";
+import { SelectedPage } from "@/utils/types";
 
-const Navbar = () => {
+type NavbarProps = {
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+const Navbar = ({ selectedPage, setSelectedPage }: NavbarProps) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   return (
@@ -19,10 +26,26 @@ const Navbar = () => {
           <>
             {/* desktop version */}
             <div className="flex items-center gap-6 ">
-              <div>Home</div>
-              <div>Benefits</div>
-              <div>Our Classes</div>
-              <div>Contact Us</div>
+              <Links
+                page="home"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Links
+                page="Benefits"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Links
+                page="Our Classes"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Links
+                page="Contact Us"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
             </div>
             <div className="flex items-center gap-6">
               <div>Sign In</div>
@@ -47,10 +70,26 @@ const Navbar = () => {
           </div>
 
           <div className="flex flex-col items-center gap-6 ">
-            <div>Home</div>
-            <div>Benefits</div>
-            <div>Our Classes</div>
-            <div>Contact Us</div>
+            <Links
+              page="home"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Links
+              page="Benefits"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Links
+              page="Our Classes"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Links
+              page="Contact Us"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
           </div>
         </div>
       )}
