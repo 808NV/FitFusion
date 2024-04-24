@@ -17,9 +17,9 @@ const Navbar = ({
 }: NavbarProps) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
-  const navbarBackground = isTopOfPage ? "" : "bg-green-200 drop-shadow";
+  const navbarBackground = isTopOfPage ? "" : "bg-white drop-shadow text-black";
   return (
-    <nav className="bg-green-400 text-white">
+    <nav className="bg-black text-white">
       <div
         className={`${navbarBackground} flex items-center ${
           isAboveMediumScreens ? "justify-around" : "justify-between"
@@ -28,6 +28,7 @@ const Navbar = ({
         <h1 className={`logo ${isAboveMediumScreens ? "text-3xl" : "text-lg"}`}>
           FitFusion
         </h1>
+
         {isAboveMediumScreens ? (
           <>
             {/* desktop version */}
@@ -68,7 +69,7 @@ const Navbar = ({
       </div>
       {/* mobile menu modal */}
       {!isAboveMediumScreens && toggleMenu && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[200px] bg-green-800 drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[200px] bg-black drop-shadow-xl">
           <div className="flex justify-end px-10 py-6">
             <button onClick={() => setToggleMenu(!toggleMenu)}>
               <XMarkIcon className="w-6 h-6" />

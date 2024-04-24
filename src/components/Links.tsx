@@ -14,8 +14,8 @@ const Links = ({ page, selectedPage, setSelectedPage }: LinksProps) => {
     <div className="cursor-pointer">
       <AnchorLink
         className={`${
-          selectedPage === currentPage ? "bg-green-950" : ""
-        } transition duration-500 hover:bg-green-500`}
+          selectedPage === currentPage ? "bg-black text-white" : ""
+        } transition duration-500 hover:bg-black hover:text-white px-2 py-2`}
         href={`#${currentPage}`}
         onClick={() => setSelectedPage(currentPage)}
       >
