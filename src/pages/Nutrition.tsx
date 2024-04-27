@@ -6,7 +6,6 @@ const Nutrition = () => {
 
   const fetchNutrition = useEffect(() => {
     const apiKey = process.env.REACT_APP_CN_KEY;
-    console.log(apiKey);
 
     const fetchData = async () => {
       try {
@@ -26,7 +25,6 @@ const Nutrition = () => {
         }
 
         const data = await response.json();
-        console.log(data);
         setNutrition(data.items);
       } catch (error) {
         console.error("Error:", error);

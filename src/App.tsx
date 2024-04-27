@@ -7,6 +7,7 @@ function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Home
   );
+
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,7 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <>
       <Navbar
