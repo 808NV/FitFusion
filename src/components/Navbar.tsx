@@ -33,17 +33,12 @@ const Navbar = ({
                 setSelectedPage={setSelectedPage}
               />
               <Links
-                page="Benefits"
+                page="Programs"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
               <Links
-                page="Our Classes"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <Links
-                page="Contact Us"
+                page="About"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
@@ -77,17 +72,12 @@ const Navbar = ({
               setSelectedPage={setSelectedPage}
             />
             <Links
-              page="Benefits"
+              page="Programs"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Links
-              page="Our Classes"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Links
-              page="Contact Us"
+              page="About"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
