@@ -2,13 +2,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
 import Links from "./Links";
-import { SelectedPage } from "@/utils/types";
-
-type NavbarProps = {
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
-  isTopOfPage: boolean;
-};
+import { SelectedPage, NavbarProps } from "@/utils/types";
 
 const Navbar = ({
   selectedPage,

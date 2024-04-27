@@ -1,8 +1,5 @@
+import { SelectedPage, HomeProps } from "@/utils/types";
 import header from "@/assets/header.png";
-import { SelectedPage } from "@/utils/types";
-type HomeProps = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
 import fatIcon from "@/assets/man.png";
 import muscleIcon from "@/assets/muscle.png";
 import cardioIcon from "@/assets/cardio.png";
