@@ -1,8 +1,7 @@
 export enum SelectedPage {
   Home = "home",
-  Benefits = "benefits",
-  OurClasses = "ourclasses",
-  ContactUs = "contactus",
+  Programs = "Programs",
+  About = "About",
 }
 
 export type HomeProps = {
