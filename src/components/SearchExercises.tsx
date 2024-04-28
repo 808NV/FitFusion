@@ -1,7 +1,29 @@
+import { fetchExercises, exerciseOptions } from "@/utils/fetchExercises";
 import { useState } from "react";
 
 const SearchExercises = () => {
-  const [Search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
+  const [displayRes, setDisplayRes] = useState([]);
+
+  const handleSearch = async () => {
+    if (search) {
+      const exercisesData = await fetchExercises(
+        "https://exercisedb.p.rapidapi.com/exercises",
+        exerciseOptions
+      );
+      const searchedExercises = exercisesData.filter(
+        (exercise) =>
+          exercise.name.toLowerCase().includes(search.toLowerCase()) ||
+          exercise.bodyPart.toLowerCase().includes(search.toLowerCase()) ||
+          exercise.equipment.toLowerCase().includes(search.toLowerCase()) ||
+          exercise.name.toLowerCase().includes(search.toLowerCase())
+      );
+
+      setSearch("");
+      setDisplayRes(searchedExercises);
+    }
+  };
+
   return (
     <div>
       <h1>Search Exercises</h1>
@@ -9,10 +31,10 @@ const SearchExercises = () => {
         <input
           type="text"
           placeholder="Search Exercises"
-          value={Search}
+          value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
         />
-        <button>Search</button>
+        <button onClick={() => handleSearch}>Search</button>
       </div>
     </div>
   );
