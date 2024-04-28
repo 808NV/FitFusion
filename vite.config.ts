@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => {
   return {
     define: {
       "process.env.REACT_APP_CN_KEY": JSON.stringify(env.REACT_APP_CN_KEY),
+      "process.env.REACT_APP_RAPID_KEY": JSON.stringify(
+        env.REACT_APP_RAPID_KEY
+      ),
     },
     plugins: [react()],
     resolve: {
