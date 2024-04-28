@@ -1,9 +1,11 @@
 import { fetchExercises, exerciseOptions } from "@/utils/fetchExercises";
 import { useState } from "react";
 import { defaultExercises } from "@/assets/Exercises";
+import { FetchedExercises } from "@/utils/types";
+
 const Exercises = () => {
   const [search, setSearch] = useState("");
-  const [displayRes, setDisplayRes] = useState([]);
+  const [displayRes, setDisplayRes] = useState<FetchedExercises | []>([]);
 
   const handleSearch = async () => {
     if (search) {

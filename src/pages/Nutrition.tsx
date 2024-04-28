@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { FetchedNutrition } from "@/utils/types";
 
 const Nutrition = () => {
   const [userInput, setUserInput] = useState("");
-  const [nutrition, setNutrition] = useState<[]>([]);
+  const [nutrition, setNutrition] = useState<FetchedNutrition | []>([]);
 
   const fetchNutrition = useEffect(() => {
     const apiKey = process.env.REACT_APP_CN_KEY;
@@ -26,13 +27,14 @@ const Nutrition = () => {
 
         const data = await response.json();
         setNutrition(data.items);
+        console.log(nutrition);
       } catch (error) {
         console.error("Error:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [userInput]);
 
   return (
     <div>

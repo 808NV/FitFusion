@@ -25,7 +25,7 @@ const BmiCalculator = () => {
           <input
             type="number"
             value={height}
-            onChange={(e) => setHeight(e.target.value)}
+            onChange={(e) => setHeight(parseInt(e.target.value))}
             required
           />
         </label>
@@ -36,7 +36,7 @@ const BmiCalculator = () => {
           <input
             type="number"
             value={weight}
-            onChange={(e) => setWeight(e.target.value)}
+            onChange={(e) => setWeight(parseInt(e.target.value))}
             required
           />
         </label>
