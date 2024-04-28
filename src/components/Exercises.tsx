@@ -11,12 +11,13 @@ const Exercises = () => {
         "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       );
+      console.log(exercisesData);
       const searchedExercises = exercisesData.filter(
         (exercise) =>
           exercise.name.toLowerCase().includes(search.toLowerCase()) ||
           exercise.bodyPart.toLowerCase().includes(search.toLowerCase()) ||
-          exercise.equipment.toLowerCase().includes(search.toLowerCase()) ||
-          exercise.name.toLowerCase().includes(search.toLowerCase())
+          exercise.target.toLowerCase().includes(search.toLowerCase()) ||
+          exercise.equipment.toLowerCase().includes(search.toLowerCase())
       );
 
       setSearch("");
@@ -36,6 +37,29 @@ const Exercises = () => {
         />
         <button onClick={() => handleSearch()}>Search</button>
       </div>
+
+      {/* search results */}
+      {displayRes.length > 0 ? (
+        <div>
+          {displayRes.map((exercise) => (
+            <div key={exercise.id}>
+              <img
+                src={exercise.gifUrl}
+                alt={`a person doing ${exercise.name}`}
+              />
+              <h3>{exercise.name}</h3>
+              <div>
+                <span>{exercise.bodyPart} </span>
+                <span>{exercise.equipment} </span>
+                <span>{exercise.target} </span>
+              </div>
+              <p>{exercise.instructions}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
