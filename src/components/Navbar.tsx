@@ -15,7 +15,7 @@ const Navbar = ({
   return (
     <nav className="bg-black text-white">
       <div
-        className={`${navbarBackground} flex items-center ${
+        className={` fixed w-full ${navbarBackground} flex items-center ${
           isAboveMediumScreens ? "justify-around" : "justify-between"
         } top-0 z-30 w-full py-6 px-10`}
       >
