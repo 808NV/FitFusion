@@ -1,6 +1,6 @@
 import { fetchExercises, exerciseOptions } from "@/utils/fetchExercises";
 import { useState } from "react";
-
+import { defaultExercises } from "@/assets/Exercises";
 const Exercises = () => {
   const [search, setSearch] = useState("");
   const [displayRes, setDisplayRes] = useState([]);
@@ -58,7 +58,23 @@ const Exercises = () => {
           ))}
         </div>
       ) : (
-        <></>
+        <div>
+          {defaultExercises.map((exercise) => (
+            <div key={exercise.id}>
+              <img
+                src={exercise.gifUrl}
+                alt={`a person doing ${exercise.name}`}
+              />
+              <h3>{exercise.name}</h3>
+              <div>
+                <span>{exercise.bodyPart} </span>
+                <span>{exercise.equipment} </span>
+                <span>{exercise.target} </span>
+              </div>
+              <p>{exercise.instructions}</p>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
