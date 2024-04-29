@@ -3,11 +3,18 @@ import { motion } from "framer-motion";
 import BmiIcon from "@/assets/bmi.png";
 import NutritionIcon from "@/assets/apple.png";
 import ExerciseIcon from "@/assets/exercise.png";
+import BmiCalculator from "./BmiCalculator";
+import Nutrition from "./Nutrition";
+import Exercises from "./Exercises";
+import { useState } from "react";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 const Programs = ({ setSelectedPage }: Props) => {
+  const [showBmiModal, setShowBmiModal] = useState(false);
+  const [showNutriModal, setNutriShowModal] = useState(false);
+  const [showExerModal, setExerShowModal] = useState(false);
   return (
     <div className="w-full bg-primary-100 py-20">
       <motion.div
@@ -29,7 +36,11 @@ const Programs = ({ setSelectedPage }: Props) => {
           </h1>
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer">
+              {showBmiModal ? <BmiCalculator /> : <></>}
+              <div
+                className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
+                onClick={() => setShowBmiModal(!showBmiModal)}
+              >
                 <div className="flex items-center gap-5 pb-5">
                   <img
                     src={BmiIcon}
@@ -43,7 +54,11 @@ const Programs = ({ setSelectedPage }: Props) => {
                   through diet and exercise
                 </p>
               </div>{" "}
-              <div className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer">
+              {showNutriModal ? <Nutrition /> : <></>}
+              <div
+                className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
+                onClick={() => setNutriShowModal(!showNutriModal)}
+              >
                 <div className="flex items-center gap-5 pb-5">
                   <img
                     src={NutritionIcon}
@@ -58,7 +73,11 @@ const Programs = ({ setSelectedPage }: Props) => {
                   repair.
                 </p>
               </div>
-              <div className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer">
+              {showExerModal ? <Exercises /> : <></>}
+              <div
+                className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
+                onClick={() => setExerShowModal(!showExerModal)}
+              >
                 <div className="flex items-center gap-5 pb-5">
                   <img
                     src={ExerciseIcon}
