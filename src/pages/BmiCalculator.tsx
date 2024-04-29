@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BmiCalculator = () => {
+const BmiCalculator = ({ modalStyle }) => {
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [bmiResult, setBmiResult] = useState<string | null>(null);
@@ -16,34 +16,51 @@ const BmiCalculator = () => {
   };
 
   return (
-    <div>
-      <h1>Body Mass Index (BMI) Calculator</h1>
+    <div className={`${modalStyle}`}>
+      <div className="bg-white text-black rounded-lg p-6 shadow-xl w-full max-w-md mx-auto">
+        <h1 className="text-2xl font-bold mb-4">
+          Body Mass Index (BMI) Calculator
+        </h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Height (in meters ):
-          <input
-            type="number"
-            value={height}
-            onChange={(e) => setHeight(parseInt(e.target.value))}
-            required
-          />
-        </label>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="flex flex-col">
+            <label htmlFor="height" className="text-lg font-medium">
+              Height (in meters):
+            </label>
+            <input
+              id="height"
+              type="number"
+              value={height}
+              onChange={(e) => setHeight(parseInt(e.target.value))}
+              className="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+              required
+            />
+          </div>
 
-        <br />
-        <label>
-          Weight (in kilograms):
-          <input
-            type="number"
-            value={weight}
-            onChange={(e) => setWeight(parseInt(e.target.value))}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Calculate BMI</button>
-      </form>
-      {bmiResult && <p>Your BMI: {bmiResult}</p>}
+          <div className="flex flex-col">
+            <label htmlFor="weight" className="text-lg font-medium">
+              Weight (in kilograms):
+            </label>
+            <input
+              id="weight"
+              type="number"
+              value={weight}
+              onChange={(e) => setWeight(parseInt(e.target.value))}
+              className="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-blue-500 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-600"
+          >
+            Calculate BMI
+          </button>
+        </form>
+
+        {bmiResult && <p className="text-lg mt-4">Your BMI: {bmiResult}</p>}
+      </div>
     </div>
   );
 };
