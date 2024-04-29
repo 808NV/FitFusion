@@ -1,7 +1,9 @@
 export enum SelectedPage {
   Home = "home",
+  Benefits = "benefits",
+  OurClasses = "ourclasses",
   Programs = "Programs",
-  About = "About",
+  ContactUs = "contactus",
 }
 
 export type HomeProps = {
@@ -18,6 +20,18 @@ export type NavbarProps = {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
   isTopOfPage: boolean;
+};
+
+export type BenefitType = {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+};
+
+export type ClassType = {
+  name: string;
+  description?: string;
+  image: string;
 };
 
 export type FetchedNutrition = [
