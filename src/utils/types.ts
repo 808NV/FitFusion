@@ -6,9 +6,41 @@ export enum SelectedPage {
   ContactUs = "contactus",
 }
 
+/* pages types */
+
 export type HomeProps = {
   setSelectedPage: (value: SelectedPage) => void;
 };
+
+export type BenefitsProps = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+export type BenefitType = {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+};
+
+export type ClassesProps = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+export type ClassType = {
+  name: string;
+  description?: string;
+  image: string;
+};
+
+export type ProgramsProps = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+export type ContactProps = {
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+/* components types */
 
 export type LinksProps = {
   page: string;
@@ -22,17 +54,29 @@ export type NavbarProps = {
   isTopOfPage: boolean;
 };
 
-export type BenefitType = {
-  icon: JSX.Element;
-  title: string;
-  description: string;
+export type HTextProps = {
+  children: React.ReactNode;
 };
 
-export type ClassType = {
+export type ClassProps = {
   name: string;
   description?: string;
   image: string;
 };
+
+export type BenefitProps = {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+export type ActionBtnProps = {
+  children: React.ReactNode;
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+/* data types */
 
 export type FetchedNutrition = [
   {

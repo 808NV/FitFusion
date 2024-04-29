@@ -1,6 +1,6 @@
 import ActionButton from "@/components/ActionButton";
 import HText from "@/components/HText";
-import { BenefitType, SelectedPage } from "@/utils/types";
+import { BenefitType, SelectedPage, BenefitsProps } from "@/utils/types";
 import {
   HomeModernIcon,
   UserGroupIcon,
@@ -38,11 +38,7 @@ const container = {
   },
 };
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Benefits = ({ setSelectedPage }: Props) => {
+const Benefits = ({ setSelectedPage }: BenefitsProps) => {
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
       <motion.div

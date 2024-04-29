@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SelectedPage } from "@/utils/types";
+import { SelectedPage, ProgramsProps } from "@/utils/types";
 import { motion } from "framer-motion";
 import BmiIcon from "@/assets/bmi.png";
 import NutritionIcon from "@/assets/apple.png";
@@ -18,10 +18,7 @@ import Exercises from "@/components/Modals/Exercises";
   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
 </svg>;
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-const Programs = ({ setSelectedPage }: Props) => {
+const Programs = ({ setSelectedPage }: ProgramsProps) => {
   const modalStyle =
     "fixed inset-0 z-50 flex items-center justify-center bg-primary-100 bg-opacity-50";
   const closeBtn = (

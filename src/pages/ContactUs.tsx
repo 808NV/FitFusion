@@ -1,14 +1,10 @@
 import { useForm } from "react-hook-form";
-import { SelectedPage } from "@/utils/types";
+import { SelectedPage, ContactProps } from "@/utils/types";
 import { motion } from "framer-motion";
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import HText from "@/components/HText";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const ContactUs = ({ setSelectedPage }: Props) => {
+const ContactUs = ({ setSelectedPage }: ContactProps) => {
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
   px-5 py-3 placeholder-white`;
 

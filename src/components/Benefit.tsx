@@ -1,4 +1,4 @@
-import { SelectedPage } from "@/utils/types";
+import { SelectedPage, BenefitProps } from "@/utils/types";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
@@ -7,14 +7,12 @@ const childVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-type Props = {
-  icon: JSX.Element;
-  title: string;
-  description: string;
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
+const Benefit = ({
+  icon,
+  title,
+  description,
+  setSelectedPage,
+}: BenefitProps) => {
   return (
     <motion.div
       variants={childVariant}

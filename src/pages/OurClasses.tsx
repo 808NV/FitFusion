@@ -1,4 +1,4 @@
-import { SelectedPage, ClassType } from "@/utils/types";
+import { SelectedPage, ClassType, ClassesProps } from "@/utils/types";
 import image1 from "@/assets/image1.png";
 import image2 from "@/assets/image2.png";
 import image3 from "@/assets/image3.png";
@@ -43,11 +43,7 @@ const classes: Array<ClassType> = [
   },
 ];
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const OurClasses = ({ setSelectedPage }: Props) => {
+const OurClasses = ({ setSelectedPage }: ClassesProps) => {
   return (
     <section id="ourclasses" className="w-full bg-primary-100 py-40">
       <motion.div

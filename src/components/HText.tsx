@@ -1,10 +1,6 @@
-import React from "react";
+import { HTextProps } from "@/utils/types";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const HText = ({ children }: Props) => {
+const HText = ({ children }: HTextProps) => {
   return (
     <h1 className="basis-3/5 text-gray-20 font-montserrat text-3xl font-bold">
       {children}
