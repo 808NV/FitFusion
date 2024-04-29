@@ -3,6 +3,7 @@ import { SelectedPage } from "@/utils/types";
 import { motion } from "framer-motion";
 import BmiIcon from "@/assets/bmi.png";
 import NutritionIcon from "@/assets/apple.png";
+import ExerciseIcon from "@/assets/exercise.png";
 import Nutrition from "@/components/Modals/Nutrition";
 import BmiCalculator from "@/components/Modals/BmiCalculator";
 import Exercises from "@/components/Modals/Exercises";
