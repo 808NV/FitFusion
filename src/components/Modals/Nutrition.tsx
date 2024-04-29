@@ -5,7 +5,7 @@ const Nutrition = ({ modalStyle, closeBtn, setNutriShowModal }) => {
   const [userInput, setUserInput] = useState("");
   const [nutrition, setNutrition] = useState<FetchedNutrition | []>([]);
 
-  const fetchNutrition = useEffect(() => {
+  useEffect(() => {
     const apiKey = process.env.REACT_APP_CN_KEY;
 
     const fetchData = async () => {
