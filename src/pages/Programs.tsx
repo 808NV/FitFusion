@@ -41,9 +41,9 @@ const Programs = ({ setSelectedPage }: Props) => {
     </svg>
   );
 
-  const [showBmiModal, setShowBmiModal] = useState(false);
-  const [showNutriModal, setNutriShowModal] = useState(false);
-  const [showExerModal, setExerShowModal] = useState(false);
+  const [showBmiModal, setShowBmiModal] = useState<boolean>(false);
+  const [showNutriModal, setNutriShowModal] = useState<boolean>(false);
+  const [showExerModal, setExerShowModal] = useState<boolean>(false);
   return (
     <div className="w-full bg-primary-100 py-20">
       <motion.div

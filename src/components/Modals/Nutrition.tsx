@@ -1,7 +1,17 @@
 import { useEffect, useState } from "react";
 import { FetchedNutrition } from "@/utils/types";
 
-const Nutrition = ({ modalStyle, closeBtn, setNutriShowModal }) => {
+type NutritionProps = {
+  modalStyle: string;
+  closeBtn: JSX.Element;
+  setNutriShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Nutrition = ({
+  modalStyle,
+  closeBtn,
+  setNutriShowModal,
+}: NutritionProps) => {
   const [userInput, setUserInput] = useState("");
   const [nutrition, setNutrition] = useState<FetchedNutrition | []>([]);
 

@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-const BmiCalculator = ({ modalStyle, closeBtn, setShowBmiModal }) => {
+type BmiProps = {
+  modalStyle: string;
+  closeBtn: JSX.Element;
+  setShowBmiModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const BmiCalculator = ({ modalStyle, closeBtn, setShowBmiModal }: BmiProps) => {
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [bmiResult, setBmiResult] = useState<string | null>(null);

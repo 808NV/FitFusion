@@ -3,7 +3,17 @@ import { useState } from "react";
 import { defaultExercises } from "@/assets/Exercises";
 import { FetchedExercises } from "@/utils/types";
 
-const Exercises = ({ modalStyle, closeBtn, setExerShowModal }) => {
+type ExercisesProps = {
+  modalStyle: string;
+  closeBtn: JSX.Element;
+  setExerShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Exercises = ({
+  modalStyle,
+  closeBtn,
+  setExerShowModal,
+}: ExercisesProps) => {
   const [search, setSearch] = useState("");
   const [displayRes, setDisplayRes] = useState<FetchedExercises | []>([]);
 
