@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FetchedNutrition } from "@/utils/types";
 
-const Nutrition = () => {
+const Nutrition = ({ modalStyle }) => {
   const [userInput, setUserInput] = useState("");
   const [nutrition, setNutrition] = useState<FetchedNutrition | []>([]);
 
@@ -37,7 +37,7 @@ const Nutrition = () => {
   }, [userInput]);
 
   return (
-    <div>
+    <div className={`${modalStyle}`}>
       <div className=" bg-white rounded-lg p-6 shadow-xl w-full max-w-md mx-auto">
         <div className="flex items-center mb-4">
           <input

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { defaultExercises } from "@/assets/Exercises";
 import { FetchedExercises } from "@/utils/types";
 
-const Exercises = () => {
+const Exercises = ({ modalStyle }) => {
   const [search, setSearch] = useState("");
   const [displayRes, setDisplayRes] = useState<FetchedExercises | []>([]);
 
@@ -28,7 +28,9 @@ const Exercises = () => {
   };
 
   return (
-    <div>
+    <div
+      className={`${modalStyle} fixed inset-0 overflow-y-auto flex justify-center items-center`}
+    >
       <div className="bg-white p-8 rounded-lg max-w-md w-full">
         <h1 className="text-3xl font-bold mb-6">Search Exercises</h1>
 
