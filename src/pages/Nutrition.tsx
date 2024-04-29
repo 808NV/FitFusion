@@ -46,12 +46,6 @@ const Nutrition = ({ modalStyle }) => {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <button
-            className="bg-blue-500 text-white rounded-r-md px-4 py-2 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
-            onClick={() => fetchNutrition}
-          >
-            fetch
-          </button>
         </div>
         {userInput ? (
           <div className="space-y-4">
