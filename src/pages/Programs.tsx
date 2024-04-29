@@ -87,8 +87,9 @@ const Programs = ({ setSelectedPage }: Props) => {
                   <h3>BMI Calculator</h3>
                 </div>
                 <p className="text-[#ababa5]">
-                  reduce body fat by burning more calories than you consume
-                  through diet and exercise
+                  Unlock Your Health Potential: Explore Your Body's Composition
+                  with Our BMI Calculator. Understand Your Numbers, Shape Your
+                  Future.
                 </p>
               </div>{" "}
               {showNutriModal ? (
@@ -110,12 +111,12 @@ const Programs = ({ setSelectedPage }: Props) => {
                     alt="A strong muscle"
                     className="bg-transparent w-12 rounded-sm"
                   />
-                  <h3>Nutrition Tracker</h3>
+                  <h3>AI-Powered Nutrition Tracker</h3>
                 </div>
                 <p className="text-[#ababa5]">
-                  build muscle by engaging in strength training exercise and
-                  consuming adequate protein to support muscle growth and
-                  repair.
+                  Elevate Your Nutrition Game: Harness the Power of AI to
+                  Uncover the Nutritional Secrets of Your Food. Dive Deep into
+                  Detailed Values, Empower Your Diet.
                 </p>
               </div>
               {showExerModal ? (
@@ -137,12 +138,12 @@ const Programs = ({ setSelectedPage }: Props) => {
                     alt="A heart beating"
                     className="bg-transparent w-12 rounded-sm"
                   />
-                  <h3>Exercises</h3>
+                  <h3>Exercise Search Tool</h3>
                 </div>
                 <p className="text-[#ababa5]">
-                  combine cardiovascular exercise with strength training for a
-                  comprehensive workout that boosts both heart health and muscle
-                  strength.
+                  Whether You Seek Specific Exercises or Targeted Muscle
+                  Workouts, Let Our Search Tool Guide You with Live Visuals and
+                  Expert Guidance.
                 </p>
               </div>
             </div>
