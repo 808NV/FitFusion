@@ -12,6 +12,8 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 const Programs = ({ setSelectedPage }: Props) => {
+  const modalStyle =
+    "fixed inset-0 z-50 flex items-center justify-center bg-primary-100 bg-opacity-50";
   const [showBmiModal, setShowBmiModal] = useState(false);
   const [showNutriModal, setNutriShowModal] = useState(false);
   const [showExerModal, setExerShowModal] = useState(false);
@@ -36,7 +38,7 @@ const Programs = ({ setSelectedPage }: Props) => {
           </h1>
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {showBmiModal ? <BmiCalculator /> : <></>}
+              {showBmiModal ? <BmiCalculator modalStyle={modalStyle} /> : <></>}
               <div
                 className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
                 onClick={() => setShowBmiModal(!showBmiModal)}
@@ -54,7 +56,7 @@ const Programs = ({ setSelectedPage }: Props) => {
                   through diet and exercise
                 </p>
               </div>{" "}
-              {showNutriModal ? <Nutrition /> : <></>}
+              {showNutriModal ? <Nutrition modalStyle={modalStyle} /> : <></>}
               <div
                 className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
                 onClick={() => setNutriShowModal(!showNutriModal)}
@@ -73,7 +75,7 @@ const Programs = ({ setSelectedPage }: Props) => {
                   repair.
                 </p>
               </div>
-              {showExerModal ? <Exercises /> : <></>}
+              {showExerModal ? <Exercises modalStyle={modalStyle} /> : <></>}
               <div
                 className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
                 onClick={() => setExerShowModal(!showExerModal)}
