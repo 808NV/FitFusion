@@ -1,12 +1,11 @@
+import { useState } from "react";
 import { SelectedPage } from "@/utils/types";
 import { motion } from "framer-motion";
 import BmiIcon from "@/assets/bmi.png";
 import NutritionIcon from "@/assets/apple.png";
-import ExerciseIcon from "@/assets/exercise.png";
-import BmiCalculator from "./BmiCalculator";
-import Nutrition from "./Nutrition";
-import Exercises from "./Exercises";
-import { useState } from "react";
+import Nutrition from "@/components/Modals/Nutrition";
+import BmiCalculator from "@/components/Modals/BmiCalculator";
+import Exercises from "@/components/Modals/Exercises";
 <svg
   xmlns="http://www.w3.org/2000/svg"
   fill="none"
