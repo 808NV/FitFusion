@@ -39,10 +39,11 @@ const Nutrition = ({ modalStyle }) => {
   return (
     <div className={`${modalStyle}`}>
       <div className=" bg-white rounded-lg p-6 shadow-xl w-full max-w-md mx-auto">
-        <div className="flex items-center mb-4">
+        <div className="flex justify-center items-center mb-4">
           <input
-            className="bg-slate-900"
+            className="bg-primary-300 p-2 rounded-sm font-bold"
             type="text"
+            placeholder="3 cans of tuna"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
