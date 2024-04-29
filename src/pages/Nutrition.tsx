@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FetchedNutrition } from "@/utils/types";
 
-const Nutrition = ({ modalStyle }) => {
+const Nutrition = ({ modalStyle, closeBtn, setNutriShowModal }) => {
   const [userInput, setUserInput] = useState("");
   const [nutrition, setNutrition] = useState<FetchedNutrition | []>([]);
 
@@ -39,6 +39,9 @@ const Nutrition = ({ modalStyle }) => {
   return (
     <div className={`${modalStyle}`}>
       <div className=" bg-white rounded-lg p-6 shadow-xl w-full max-w-md mx-auto">
+        <div className="flex justify-end text-black">
+          <button onClick={() => setNutriShowModal(false)}>{closeBtn}</button>
+        </div>
         <div className="flex justify-center items-center mb-4">
           <input
             className="bg-primary-300 p-2 rounded-sm font-bold"

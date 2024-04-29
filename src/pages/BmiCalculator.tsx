@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BmiCalculator = ({ modalStyle }) => {
+const BmiCalculator = ({ modalStyle, closeBtn, setShowBmiModal }) => {
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [bmiResult, setBmiResult] = useState<string | null>(null);
@@ -18,6 +18,9 @@ const BmiCalculator = ({ modalStyle }) => {
   return (
     <div className={`${modalStyle}`}>
       <div className="bg-white text-black rounded-lg p-6 shadow-xl w-full max-w-md mx-auto">
+        <div className="flex justify-end text-black">
+          <button onClick={() => setShowBmiModal(false)}>{closeBtn}</button>
+        </div>
         <h1 className="text-2xl font-bold mb-4">
           Body Mass Index (BMI) Calculator
         </h1>

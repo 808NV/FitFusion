@@ -7,6 +7,16 @@ import BmiCalculator from "./BmiCalculator";
 import Nutrition from "./Nutrition";
 import Exercises from "./Exercises";
 import { useState } from "react";
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  strokeWidth={1.5}
+  stroke="black"
+  className="w-8 h-8"
+>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>;
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -14,6 +24,23 @@ type Props = {
 const Programs = ({ setSelectedPage }: Props) => {
   const modalStyle =
     "fixed inset-0 z-50 flex items-center justify-center bg-primary-100 bg-opacity-50";
+  const closeBtn = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      className="w-8 h-8 "
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 18 18 6M6 6l12 12"
+      />
+    </svg>
+  );
+
   const [showBmiModal, setShowBmiModal] = useState(false);
   const [showNutriModal, setNutriShowModal] = useState(false);
   const [showExerModal, setExerShowModal] = useState(false);
@@ -38,7 +65,15 @@ const Programs = ({ setSelectedPage }: Props) => {
           </h1>
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {showBmiModal ? <BmiCalculator modalStyle={modalStyle} /> : <></>}
+              {showBmiModal ? (
+                <BmiCalculator
+                  modalStyle={modalStyle}
+                  closeBtn={closeBtn}
+                  setShowBmiModal={setShowBmiModal}
+                />
+              ) : (
+                <></>
+              )}
               <div
                 className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
                 onClick={() => setShowBmiModal(!showBmiModal)}
@@ -56,7 +91,15 @@ const Programs = ({ setSelectedPage }: Props) => {
                   through diet and exercise
                 </p>
               </div>{" "}
-              {showNutriModal ? <Nutrition modalStyle={modalStyle} /> : <></>}
+              {showNutriModal ? (
+                <Nutrition
+                  modalStyle={modalStyle}
+                  closeBtn={closeBtn}
+                  setNutriShowModal={setNutriShowModal}
+                />
+              ) : (
+                <></>
+              )}
               <div
                 className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
                 onClick={() => setNutriShowModal(!showNutriModal)}
@@ -75,7 +118,15 @@ const Programs = ({ setSelectedPage }: Props) => {
                   repair.
                 </p>
               </div>
-              {showExerModal ? <Exercises modalStyle={modalStyle} /> : <></>}
+              {showExerModal ? (
+                <Exercises
+                  modalStyle={modalStyle}
+                  closeBtn={closeBtn}
+                  setExerShowModal={setExerShowModal}
+                />
+              ) : (
+                <></>
+              )}
               <div
                 className="bg-[#131313] max-w-[300px] p-5 hover:bg-blue-700 cursor-pointer"
                 onClick={() => setExerShowModal(!showExerModal)}

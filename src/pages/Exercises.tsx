@@ -3,7 +3,7 @@ import { useState } from "react";
 import { defaultExercises } from "@/assets/Exercises";
 import { FetchedExercises } from "@/utils/types";
 
-const Exercises = ({ modalStyle }) => {
+const Exercises = ({ modalStyle, closeBtn, setExerShowModal }) => {
   const [search, setSearch] = useState("");
   const [displayRes, setDisplayRes] = useState<FetchedExercises | []>([]);
 
@@ -32,6 +32,9 @@ const Exercises = ({ modalStyle }) => {
       className={`${modalStyle} fixed inset-0 overflow-y-auto flex justify-center items-center`}
     >
       <div className="bg-white p-8 rounded-lg max-w-md w-full">
+        <div className="flex justify-end text-black">
+          <button onClick={() => setExerShowModal(false)}>{closeBtn}</button>
+        </div>
         <h1 className="text-3xl font-bold mb-6">Search Exercises</h1>
 
         <div className="flex items-center mb-6">
