@@ -7,16 +7,6 @@ import ExerciseIcon from "@/assets/exercise.png";
 import Nutrition from "@/components/Modals/Nutrition";
 import BmiCalculator from "@/components/Modals/BmiCalculator";
 import Exercises from "@/components/Modals/Exercises";
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  fill="none"
-  viewBox="0 0 24 24"
-  strokeWidth={1.5}
-  stroke="black"
-  className="w-8 h-8"
->
-  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-</svg>;
 
 const Programs = ({ setSelectedPage }: ProgramsProps) => {
   const modalStyle =
@@ -42,8 +32,9 @@ const Programs = ({ setSelectedPage }: ProgramsProps) => {
   const [showNutriModal, setNutriShowModal] = useState<boolean>(false);
   const [showExerModal, setExerShowModal] = useState<boolean>(false);
   return (
-    <div className="w-full bg-primary-100 py-20">
+    <div id="programs" className="w-full bg-primary-100 py-40">
       <motion.div
+        className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
         onViewportEnter={() => setSelectedPage(SelectedPage.Programs)}
       >
         <motion.div
