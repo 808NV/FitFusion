@@ -27,7 +27,7 @@ const Nutrition = ({
             headers: {
               "X-Api-Key": apiKey,
               "Content-Type": "application/json",
-            },
+            } as HeadersInit,
           }
         );
 

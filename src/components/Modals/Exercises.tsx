@@ -23,9 +23,8 @@ const Exercises = ({
         "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       );
-      console.log(exercisesData);
       const searchedExercises = exercisesData.filter(
-        (exercise) =>
+        (exercise: any) =>
           exercise.name.toLowerCase().includes(search.toLowerCase()) ||
           exercise.bodyPart.toLowerCase().includes(search.toLowerCase()) ||
           exercise.target.toLowerCase().includes(search.toLowerCase()) ||
